@@ -3,7 +3,7 @@ import os
 import time
 from bs4 import BeautifulSoup
 
-url = "https://www.msijanakpuri.com/faculty/"  # Replace with your college website URL
+url = "https://www.msijanakpuri.com/faculty/"
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
@@ -17,9 +17,7 @@ if response.status_code != 200:
 
 soup = BeautifulSoup(response.content, "html.parser")
 
-output_directory = "images"  # Replace with the desired output directory path
-
-# Create the output directory if it doesn't exist
+output_directory = "images"  
 os.makedirs(output_directory, exist_ok=True)
 
 faculty_wrappers = soup.find_all("div", class_="msi-team-item-wrapper")
