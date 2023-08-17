@@ -30,7 +30,7 @@ for wrapper in faculty_wrappers:
     for item in faculty_items:
         image_element = item.select_one(".msi-team-item-image img[src]")
         if image_element is None:
-            continue  # Skip faculty item without an image
+            continue 
 
         image_url = image_element["src"]
         faculty_name = item.find("div", class_="msi-team-item-title").text.strip()
